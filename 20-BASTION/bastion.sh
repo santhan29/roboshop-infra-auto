@@ -71,3 +71,4 @@ VALIDATE $? "K9S installation"
 
 #mysql installation
 dnf install mysql -y 
+VALIDATE $? "Install MySQL" 
