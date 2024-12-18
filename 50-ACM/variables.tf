@@ -3,7 +3,7 @@ variable "zone_name" {
 }
 
 variable "project_name" {
-    default = "expense"
+    default = "roboshop"
 }
 
 variable "environment" {

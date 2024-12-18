@@ -1,5 +1,5 @@
 variable "project_name" {
-    default = "expense"
+    default = "roboshop"
 }
 
 variable "environment" {
@@ -8,7 +8,7 @@ variable "environment" {
 
 variable "common_tags" {
     default = {
-        Project = "expense"
+        Project = "roboshop"
         Terraform = "true"
         Environment = "dev"
     }
@@ -16,4 +16,4 @@ variable "common_tags" {
 
 variable "zone_name" {
     default = "aws81s.store" 
-}
+} 

@@ -1,5 +1,5 @@
 variable "project_name" {
-    default = "expense"
+    default = "roboshop"
 }
 
 variable "environment" {
@@ -12,7 +12,7 @@ variable "vpc_cidr" {
 
 variable "common_tags" {
     default = {
-        Project = "expense"
+        Project = "roboshop"
         Terraform = "true"
         Environment = "dev"
     }

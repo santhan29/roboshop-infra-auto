@@ -39,7 +39,7 @@ module "records" {
 
   records = [
     {
-      name    = "expense-${var.environment}"  #expense-dev 
+      name    = "roboshop-${var.environment}"  #expense-dev 
       type    = "A" 
       alias   = {
         name = module.ingress_alb.dns_name 
@@ -70,7 +70,7 @@ resource "aws_lb_listener" "https" {
   
 }
 
-resource "aws_lb_target_group" "expense" {
+resource "aws_lb_target_group" "roboshop" {
   name     = local.resource_name      #"expense-dev-backend1" 
   port     = 80
   protocol = "HTTP"
@@ -89,18 +89,18 @@ resource "aws_lb_target_group" "expense" {
   }
 } 
 
-resource "aws_lb_listener_rule" "expense" { 
+resource "aws_lb_listener_rule" "roboshop" { 
   listener_arn = aws_lb_listener.https.arn  
   priority     = 100  #low priority will be evaluated first 
 
   action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.expense.arn  
+    target_group_arn = aws_lb_target_group.roboshop.arn  
   }
 
   condition {
     host_header {  
-      values = ["expense-${var.environment}.${var.zone_name}"] 
+      values = ["roboshop-${var.environment}.${var.zone_name}"] 
     }
   }
 } 

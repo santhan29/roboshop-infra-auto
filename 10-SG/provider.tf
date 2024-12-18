@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {    #here backend means state
     bucket = "81s-remotestate-dev" 
-    key    = "expense-sg-eks"   
+    key    = "roboshop-sg-jenkins"   
     region = "us-east-1"
     dynamodb_table = "81s-locking-development" 
   }

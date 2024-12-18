@@ -1,4 +1,4 @@
-resource "aws_cloudfront_distribution" "expense" {
+resource "aws_cloudfront_distribution" "roboshop" {
   origin {
     domain_name              = "${var.project_name}-${var.environment}.${var.zone_name}"
     origin_id                = "${var.project_name}-${var.environment}.${var.zone_name}"
@@ -89,11 +89,11 @@ module "records" {
 
   records = [
     {
-      name    = "expense-cdn"  #expense-dev 
+      name    = "roboshop-cdn"  #expense-dev 
       type    = "A" 
       alias   = {
-        name = aws_cloudfront_distribution.expense.domain_name
-        zone_id = aws_cloudfront_distribution.expense.hosted_zone_id
+        name = aws_cloudfront_distribution.roboshop.domain_name
+        zone_id = aws_cloudfront_distribution.roboshop.hosted_zone_id 
       } 
       allow_overwrite = true 
     } 
